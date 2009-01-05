@@ -1,0 +1,239 @@
+/*  
+Theme Name: Artillery Grid Focus
+Theme URI: http://artillery.ch/
+Description: Adaption of Grid Focus by Derek Punsalan
+Version: 1.0
+Author: Benjamin Wiederkehr
+Author URI: http://artillery.ch/
+*/
+/*
+Import
+/////////////////////////////////////////////////////////////////*/
+@import 'css/reset.css';
+/*
+Typography Presets
+/////////////////////////////////////////////////////////////////*/
+html,body		{background:#FFF;color:#333;text-align:center;} 
+body				{font:75% "Helvetica Neue",helvetica,verdana,sans-serif;background: url('img/_header_bg.png') repeat-x;border-bottom: 2px solid #c02;}
+h1					{font-size:1.8em; font-weight: bold;}
+h2					{font-size:1.5em; font-weight: bold;}
+h3					{font-size:1.5em;}
+h4					{font-size:1.3333em;}
+a						{color:#333;text-decoration:none;}
+a:hover			{color:#000;}
+a:active		{position: relative; top: 1px;}
+a.qm				{cursor:help;}
+h1 a:active	{position: relative; top: 0px;}
+em					{font-style: italic;}
+strong			{font-weight: bold;}
+#wrapper		{margin: 0 auto 25px;text-align:left;width:965px;} 
+/*
+masthead / footer - navigation and categories
+/////////////////////////////////////////////////////////////////*/
+#masthead					{padding:0;margin:10px 0;background:#333;height: 52px;position:relative;}
+#masthead h1			{font-weight:normal;text-transform:uppercase;width:461px;height: 52px;float: left;}
+#masthead h1 a		{display:block;float:left;position:relative;left:-10px;margin:5px 0 4px 0;height:32px;width:187px;padding:4px 0 6px 24px;background: rgba(204, 0, 34, 0.9) url('img/header_icon.png') 10px 7px no-repeat;color:#FFF;font-size:13px;}
+#masthead h1 a:hover{background-color:rgba(68, 68, 68, 0.9);color:#EEE!important;}
+#masthead h1 span	{display:block;float:left;position:relative;left:-10px;font-size:13px;height:32px;width:94px;margin:5px 0 4px 1px;padding:4px 0 6px 5px;background:rgba(68, 68, 68, 0.9);color:#FFF;}
+
+#authorBlurb			{padding:5px;}
+#authorBlurb img	{float:right;width:42px;height:42px; margin: 0 0 0 4px;}
+#authorBlurb img:hover{}
+#authorIntro a		{font-weight:bold;} 
+#authorIntro			{font:italic 1em/1.4 Georgia, serif;width:275px;float:right;margin:5px 0 0 0; text-align: right;color: #ccc;}
+
+#navigation			{background:#DDD;position:relative;}
+ul.nav					{list-style:none;background:#DDD;}
+ul.nav					{padding: 0;}
+.nav li					{border-right:1px solid #CCC;float:left;display:block;width:100px;}
+.nav li a				{font-size:1em;outline:none;color:#333;text-decoration:none;text-transform:uppercase;display:block;padding:5px 0 12px 5px;width:99px;}
+.nav li a span	{font-size:1em;color:#777;text-transform:lowercase;}
+.nav li a:hover,
+.nav li a.hover	{background:#333;color:#EEE!important;width:95px;}
+* html .nav li a:hover{background:#333;width:99px;}
+.nav li a:active{position: relative; top: 0; left: 0; background: #c01;}
+li.top					{border-left:1px solid #CCC;float:right;display:block; width:100px;}
+li.top a				{width:100px;}
+li.top a:hover	{ background: #333;color: #EEE !important;}
+
+.folded				{background:#333;}
+.folded ul		{list-style:none;padding:5px 0;}
+.folded li		{float:left;display:block;width:auto;height:;margin:0 20px;color:#7F7F7F;}
+.folded li a	{text-decoration:none;text-transform:uppercase;color:#7F7F7F;}
+.folded li a:hover{color:#EEE;}
+.folded li a:active{position: relative; top: 0; left: 0; background: #c02;}
+/*
+Search
+/////////////////////////////////////////////////////////////////*/
+#searchWrap				{margin-bottom:23px;position:absolute;right:5px;top:6px;}
+#searchWrap input	{vertical-align:middle;}
+#searchWrap #s{font-size:1.1em;border-top:1px solid #BBB;border-left:1px solid #BBB;border-right:1px solid #EEE;border-bottom:1px solid #EEE;padding:1px 2px;margin-right:3px;width:184px;}
+/*
+main - middle content and columns
+/////////////////////////////////////////////////////////////////*/
+#mid							{}
+#mainCol					{float:left;margin:29px 0 0 0;width:471px;position:relative;}
+#mid.wide #mainCol{float:left;margin:26px 0 0 0;width:718px;}
+/*
+Sidebars
+/////////////////////////////////////////////////////////////////*/
+#midCol, #tertCol			{color:#444;float:left;margin:25px 0 0 33px;width:214px;}
+#midCol p, #tertCol p	{color:#777;margin-bottom:5px;}
+.intro p							{font:italic 1em Georgia, serif;background:#ddd;color:#444 !important;padding: 5px 10px 10px;}
+#tertCol dl						{font:italic 1em Georgia, serif;background:#ddd;color:#444;padding: 5px 10px 10px;}
+#tertCol dl dt				{width:60px;float: left; clear: left;}
+#tertCol dl dd				{margin:0 0 0 60px;}
+.middle_links					{margin-bottom:2.4em;}
+.middle_links h3			{font-size:12px;text-transform:uppercase;font-weight:normal;}
+.middle_links h4			{font-size:12px;margin-bottom:0.5em;}
+.middle_links a				{font-weight:bold;}
+.middle_links a:hover	{color:#c02;}
+.middle_links ul			{list-style:none;}
+.middle_links ul li		{background:url(img/li.gif) no-repeat 0 3px;color:#7F7F7F;line-height:1.2em;border-top:1px solid #BBB;padding:4px 0 4px 16px;}
+.middle_links ul.feed li{background:url(img/feed_icon.png) no-repeat 0 3px;padding-left:20px;}
+.middle_links ul li.twitter_icon{background:url('http://twitter.com/favicon.ico') no-repeat 0 3px;padding-left:20px;}
+.middle_links#taxonomy ul li{background:url(img/tag_icon.png) no-repeat 0 3px;padding-left:20px;}
+.middle_links#authors ul li{background:url(img/user_icon.png) no-repeat 0 3px;padding-left:20px;}
+.middle_links#chronograph ul li{background:url(img/cal_icon.png) no-repeat 0 3px;padding-left:20px;}
+.middle_links.ext ul li{background:url(img/external_icon.png) no-repeat 0 3px;}
+.ui-tabs-hide {display:none !important;}
+#browse_tabs					{position:relative;top:-1px;}
+#browse_tabs ul.tabs	{position:relative;top:0px;}
+#browse_tabs ul.tabs li	{ float:left;}
+#browse_tabs ul.tabs a{display:block;border:1px solid #BBB;padding: 0 5px 0;font-size:12px;text-transform:uppercase;font-weight:normal;position:relative;top:1px;}
+#browse_tabs ul.tabs .ui-tabs-selected a{border-bottom:1px solid #FFF;}
+/*
+Main Content
+/////////////////////////////////////////////////////////////////*/
+.postMeta{background:url(img/dot.gif) repeat-x left center;text-transform:uppercase;font-size:11px;text-align:right;margin-bottom:5px;}
+.postMeta span.date,
+.postMeta span.author{background:#FFF;color:#7F7F7F;padding:0 2px 0 4px;}
+.postMeta span.comments{background:#FFF url(img/chat_grey.gif) no-repeat left center;padding-left:15px;margin-left:2px;}
+.postMeta span.comments a,
+.postMeta span.date a,
+.postMeta span.author a{color:#555;}
+.postDetails{border-bottom: 1px solid #B8B8B8;text-transform:uppercase;font-size:11px;text-align:left;margin-bottom:5px; padding:2px 0 10px 0;}
+.post				{margin:5px 0 20px 0;}
+.post h2		{ }
+.post h2 a	{width:100%;display:block;outline:none;}
+.post.first	{margin-top:12px;}
+.post.first h2{width:371px;}
+.post.first h2 a{background:#c02;color:#fff;position:relative;left:-10px;margin:5px 0 5px 0;height:32px;width:402px;padding:5px 0 5px 10px;background:#C02;color:#FFF;font-weight:100;}
+.post.first h2 a:hover{background:#333;}
+.post.first h2 a:active{top:0;}
+.post.first .postMeta{background:#333;height:32px;width:68px;padding:5px 0 5px 0;margin-bottom:0;position:absolute;right:0;text-align:center;}
+.post.first .postMeta span{background-color:transparent;color:#fff;padding:0;}
+.post.first .postMeta span.date{font-size:18px;font-weight:100;}
+.post h2 a:hover{}
+.entry h3		{margin:1.2em 0 .5em;}
+.entry h4		{margin:1em 0 0em;}
+.post .entry{line-height:1.4em;overflow:hidden;}
+.post .entry p{margin:1em 0;}
+.post .entry p a{background:url('img/dot.gif') repeat-x bottom left;font-weight:bold;}
+.entry blockquote{margin:0 1.3em 0;}
+.entry ul		{margin:0 1.3em 0;list-style:none;}
+.entry ul li ul{margin-top: .5em;}
+.entry li a	{color:#333;font-weight:bold;background:url('img/dot.gif') repeat-x bottom left;}
+.entry li a:hover{color:#555;}
+.entry ul li{background:url('img/li_fine.png') no-repeat 0 4px;padding-left:18px;margin-bottom:7px;}
+.entry ol		{margin:0 1em 0 3em; list-style: decimal;}
+.entry ol li{margin:0 0 7px 0; padding-left:18px;}
+.entry li.light		{background: url('img/bullet_green.png') no-repeat;}
+.entry li.medium	{background: url('img/bullet_orange.png') no-repeat;}
+.entry li.heavy		{background: url('img/bullet_red.png') no-repeat;}
+.entry img,.entry a img{border:3px solid #EEE;}
+p img, p a img{float:left;margin:2px 10px 12px 0;}
+.entry a:hover img{border-color:#DFDFDF;}
+.entry table		{width:100%;}
+.entry table img{border:none;padding:3px;}
+.entry table tr {padding:0 0 15px 0;}
+.entry table td {vertical-align:top;padding:0 10px 0 0;}
+.entry table .check	{width:75px;padding:0 10px;}
+.entry table tr.alt	{background:#EEE;}
+.entry table th			{font-weight:bold;padding:1em 10px .5em 0;border-bottom:1px solid #B8B8B8;}
+/*
+Dashboard
+/////////////////////////////////////////////////////////////////*/
+ul#dashboard					{margin:0 0 30px;}
+ul#dashboard li				{width:340px;margin:0 1px 1px 0;float:left;background:#DDD;padding:0 5px 5px;height:70px;}
+ul#dashboard li.hover	{background:#333;}
+ul#dashboard li img		{padding:5px 0 0 0;float:left;}
+ul#dashboard li a			{display:block;margin:0 0 0 18px;font-weight:bold;}
+ul#dashboard li.hover a{color:#FFF;}
+ul#dashboard li a:hover{background:url('img/external_icon.png') 100% 100% no-repeat;}
+ul#dashboard li abbr	{font:italic 1.333em/1 Georgia, serif;color:#999;display:block;margin:5px 0 0 20px;}
+/*
+Buttons
+/////////////////////////////////////////////////////////////////*/
+#more_reading { color: #7F7F7F; font-size: 11px; text-transform: uppercase; margin-bottom: 25px;}
+#more_reading p, #more_reading img { vertical-align: middle;}
+#more_reading a img { border: none; margin:0 0 3px 2px; }
+#more_reading p span{ display: block;width: 40%;}
+#more_reading p span.prev_link{float: left;text-align:left;}
+#more_reading p span.prev_link a{display: block; padding: 2px 0 2px 20px ;background: url('img/arrow_prev.png') left center no-repeat;}
+#more_reading p span.next_link{float: right;text-align:right;}
+#more_reading p span.next_link a{display: block; padding: 2px 20px 2px 0 ;background: url('img/arrow_next.png') right center no-repeat;}
+/*
+Comments
+/////////////////////////////////////////////////////////////////*/
+#comments{width:471px;padding:12px 0 0 0;}
+#comments h3,
+h3#respond{font-size:1.6em;}
+ol.commentslist{list-style:none;margin:5px 0 12px;}
+.commentslist li{background:#FFF url('img/lgrey_diag.gif') repeat top left;margin-bottom:7px;padding:7px 0;}
+.commentslist li a{font-weight:bold;background:url('img/dot.gif') repeat-x bottom left;}
+.commentslist li.alt{background:#EEE;}
+.commentslist li:hover{background:#E6E6E6;}
+.commentslist .comment_text{margin:0 7px;line-height:1.4em;overflow:hidden;}
+.comment_text p,
+.comment_text ul,
+.comment_text ol,
+.comment_text blockquote{margin:1em 0;}
+.comment_text ul,
+.comment_text ol,
+.comment_text blockquote{margin:0 1em;}
+p.author_meta{font-weight:bold;text-transform:uppercase;margin:0 0 0 7px;}
+p.post_meta{font-size:11px;text-transform:uppercase;text-align:right;margin:0 7px 0 0;}
+.commentslist li.author{background:#333;color:#CCC;}
+.commentslist li.author a{color:#DDD;}
+.commentslist li.author a:hover{color:#FFF;}
+#comments_closed{background:#333;color:#ccc;padding:7px 0;margin-top:12px;line-height: 1.5em;}
+p.nocomments{margin:0 12px 0 7px;}
+p.nocomments a{color:#ddd;font-weight:bold;text-decoration:underline;}
+p.nocomments a:hover{color:#FFF;}
+ol.pingslist{margin:1.5em 2em;font-size:12px;}
+.pingslist li{color:#7F7F7F;margin:0 0 7px 0;}
+.pingslist li a{font-weight:bold;background:url(img/dot.gif) repeat-x bottom left;}
+#commentform p{margin:1em 0;}
+#commentform p a{font-weight:bold;background:url(img/dot.gif) repeat-x bottom left;}
+#author,
+#email,
+#url,
+#comment{font:1.1em "Helvetica Neue",helvetica,verdana,sans-serif;border-top:1px solid #BBB;border-left:1px solid #BBB;border-right:1px solid #EEE;border-bottom:1px solid #EEE;padding:2px;}
+#comment{width:465px;overflow:auto;}
+#commentform p small{font-size:10px;color:#7F7F7F;}
+.commentslist code{background:transparent;}
+/*
+Footer
+/////////////////////////////////////////////////////////////////*/
+#footer p					{padding-top: 7px; }
+#footer p a				{font-weight:bold;color:#333;}
+#footer p a:hover	{color:#c02;}
+/*
+Float rules
+/////////////////////////////////////////////////////////////////*/
+.floatleft			{float:left;margin:3px 7px 0 0;}
+.floatright			{float:right;margin:3px 0 0 7px;}
+.right					{float:right;}
+.left						{float:left;}
+.clear					{clear:both;}
+.fix:after			{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.fix						{display:inline-block;} 
+* html .fix			{height:1%;}
+.fix						{display:block;}
+/*
+ Misc
+/////////////////////////////////////////////////////////////////*/
+.link_list			{ float: left; width: 45%; margin-right: 5%;}
+.link_list.last	{ margin-right: 0;}
+.link_list ul		{ margin-top: 1em;}
