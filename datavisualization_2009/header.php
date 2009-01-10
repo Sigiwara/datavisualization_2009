@@ -77,6 +77,7 @@
 		<ul class="nav fix">
 			<li><a href="<?php echo get_settings('home'); ?>/" title="Return to the the frontpage">Home</a></li>
 			<li><a href="#archives" title="View the archives" id="archives_toggle">Archiv</a></li>
+			<li><a href="#archives" title="View the archives" id="tags_toggle">Tags</a></li>
 			<li><a href="#projects" title="View the projects" id="projects_toggle">Projects</a></li>
 			<?php
 			$defaults = array('exclude' => '', 'title_li' => '');
@@ -85,13 +86,21 @@
 		</ul>
 		<?php include (TEMPLATEPATH . '/elements/searchform.php'); ?>
 	</div><!-- #navigation -->
-	<div id="archives" class="fix folded"> 
+	<div id="archives" class="fix folded browser"> 
 		<ul class="fix">
 		<?php wp_list_cats('sort_column=name&show_count=1'); ?>
 		</ul>
 	</div>
-	<div id="projects" class="fix folded"> 
+	<div id="tags" class="fix folded browser"> 
+			<?php
+			$defaults = array('smallest' => 10, 'largest' => 16,
+				'unit' => 'pt', 'number' => 45, 'format' => 'list', 
+				'orderby' => 'name', 'order' => 'ASC', 'exclude' => '');
+			?>
+		<?php wp_tag_cloud($defaults); ?>
+	</div>
+	<div id="projects" class="fix folded browser"> 
 		<ul class="fix">
-		<?php wp_list_categories('exclude=1,3,4,16,32&hide_empty=0&title_li=0&sort_column=name&show_count=1'); ?>
+		<?php wp_list_categories('exclude=1,3,4,16,32,55&hide_empty=0&title_li=0&sort_column=name&show_count=1'); ?>
 		</ul>
 	</div>

@@ -16,6 +16,11 @@ $(document).ready(function(){
 		$("#archives").slideToggle("fast");
 		return false;
 	});
+	$("#tags_toggle").click(function(){
+		$(this).toggleClass('hover');
+		$("#tags").slideToggle("fast");
+		return false;
+	});
 	$("#projects_toggle").click(function(){
 		$(this).toggleClass('hover');
 		$("#projects").slideToggle("fast");
